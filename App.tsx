@@ -1,10 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import themes from './src/themes';
+
+import { useFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/inter';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_700Bold
+  });
 
-  console.log(themes.fonts.showDeviceConfig())
+  if(!fontsLoaded){
+    return null
+  }
 
   return (
     <View style={styles.container}>
