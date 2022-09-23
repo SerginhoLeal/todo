@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    "babel.config.js": true,
+    "yarn.lock": true,
+    ".editorconfig": true,
+    ".gitignore": true,
+    "app.json": true,
+    ".expo": true,
+    ".expo-shared": true
+  }
+}
