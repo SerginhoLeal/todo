@@ -39,6 +39,7 @@ export const Card = styled.View`
 
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 
   ${({ theme }) => css`
     background-color: ${theme.colors.gray_400};
@@ -64,6 +65,4 @@ export const DeleteButton = styled.TouchableOpacity`
 
 export const CheckButton = styled.TouchableOpacity`
   flex: 1;
-  flex-direction: row;
-  align-items: center;
 `;

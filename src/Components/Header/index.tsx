@@ -1,7 +1,9 @@
 import { View, Text } from 'react-native'
 import * as Styles from "./styles";
 
+//@ts-ignore
 import Icon from "../../assets/Logo.png";
+
 import { AntDesign } from '@expo/vector-icons';
 import HeaderProps from '../../@types/Components/Header';
 import { useState } from 'react';

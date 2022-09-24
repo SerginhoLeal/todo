@@ -70,16 +70,16 @@ export const Card: React.FC = () => {
 
       {
         data.length !== 0 ? data.map(({ text }, index) => (
-        <Styles.Card key={index.toString()}>
-          <Styles.CheckButton>
+          <Styles.Card key={index.toString()}>
             <Styles.Check />
-            <Text>{text}</Text>
-          </Styles.CheckButton>
-          <Styles.DeleteButton>
-            <MaterialCommunityIcons name="trash-can-outline" size={24} color="#fff" />
-          </Styles.DeleteButton>
-        </Styles.Card>
-      )) : <Empty />}
+            <Styles.CheckButton>
+              <Text>{text}</Text>
+            </Styles.CheckButton>
+            <Styles.DeleteButton>
+              <MaterialCommunityIcons name="trash-can-outline" size={24} color="#fff" />
+            </Styles.DeleteButton>
+          </Styles.Card>
+        )) : <Empty />}
 
     </Styles.Container>
   );
