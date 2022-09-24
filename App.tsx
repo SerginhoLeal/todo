@@ -3,7 +3,7 @@ import { useFonts, Inter_400Regular, Inter_700Bold } from '@expo-google-fonts/in
 import { ThemeProvider } from 'styled-components/native';
 import theme from './src/themes';
 
-import Routes from './src/Screens/Home';
+import Home from './src/Screens/Home';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Routes />
+      <Home />
     </ThemeProvider>
   );
 }
