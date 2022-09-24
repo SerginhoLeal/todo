@@ -10,14 +10,8 @@ export const Container = styled.View`
 export const Header = styled.View`
   width: 100%;
   padding: 8px 0px;
-  /* height: 21px; */
   flex-direction: row;
   justify-content: space-between;
-
-  border-bottom-width: 1px;
-  ${({ theme }) => css`
-    border-bottom-color: ${theme.colors.gray_400};
-  `};
 `;
 
 export const ContainerCount = styled.View`
@@ -37,8 +31,39 @@ export const Count = styled.View`
   `};
 `;
 
-export const EmptyImage = styled.Image`
-  margin-top: 48px;
-  margin-bottom: 16px;
+export const Card = styled.View`
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+
+  flex-direction: row;
+  justify-content: space-between;
+
+  ${({ theme }) => css`
+    background-color: ${theme.colors.gray_400};
+  `};
 `;
 
+export const Check = styled.View`
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  margin-right: 10px;
+  ${({ theme }) => css`
+    border:1px solid ${theme.colors.blue};
+  `};
+`;
+
+export const DeleteButton = styled.TouchableOpacity`
+  width: 30px;
+
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CheckButton = styled.TouchableOpacity`
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+`;
