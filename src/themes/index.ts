@@ -7,6 +7,7 @@ export default {
     gray_500: '#262626',
     gray_600: '#1A1A1A',
     gray_700: '#0D0D0D',
+    white: '#FFFFFF',
     blue: '#4EA8DE',
     purple: '#8284FA',
     danger: '#E25858',
@@ -20,5 +21,5 @@ export default {
   font_size: {
     small: 14,
     medium: 16,
-  }
+  },
 }
