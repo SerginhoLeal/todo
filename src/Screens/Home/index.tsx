@@ -18,13 +18,8 @@ export default function Home(){
 
   return (
     <Styles.Container>
-<<<<<<< HEAD
-
-=======
       <Header tasks={tasks} setTasks={setTasks} />
->>>>>>> e4930ffc1794b3ff4eebcfbfba3dd82b43e49871
       <Card />
-
     </Styles.Container>
   );
 };
