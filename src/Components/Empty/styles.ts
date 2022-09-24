@@ -1,10 +1,13 @@
 import styled, { css } from 'styled-components/native';
+import { Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('screen');
 
 export const Container = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 21px;
+  margin-top: ${width * 0.20}px;
 
   border-top-width: 1px;
   ${({ theme }) => css`

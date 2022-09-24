@@ -41,10 +41,10 @@ export default function Header({ tasks, setTasks }: HeaderProps) {
             placeholder="Adicione uma nova tarefa"
             placeholderTextColor="#808080"
             onChangeText={(e: string) => setTaskName(e)}
-            name={taskName}
+            value={taskName}
           />
           <Styles.Button
-            activeOpacity={0.72}
+            activeOpacity={0.5}
             onPress={handlePress}
           >
             <AntDesign name="pluscircleo" size={24} color="#f2f2f2" />
