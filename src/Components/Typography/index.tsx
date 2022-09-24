@@ -1,6 +1,6 @@
 
 import styled, { css } from "styled-components/native";
-import { TextProps } from "./types";
+import { TextProps } from "../../@types/Components/Typography";
 
 export const Text = styled.Text`
   ${({ theme, fontFamily = 'Inter_400Regular', color = 'white' }: TextProps) => css`

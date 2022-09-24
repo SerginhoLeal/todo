@@ -3,12 +3,12 @@ import * as Native from 'react-native';
 import * as Styles from './styles';
 
 import { Card } from '../../Components/Card';
+import Header from '../../Components/Header';
 
 export default function Home(){
   return (
     <Styles.Container>
-      <Native.View style={{ backgroundColor: '#000', width: '100%', height: 173 }} />
-
+      <Header />
       <Card />
 
     </Styles.Container>
