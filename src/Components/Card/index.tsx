@@ -6,7 +6,6 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import { Text } from '../Typography';
 import { Empty } from '../Empty';
-import { Task } from '../../@types/Screens/Home';
 import CardProps from '../../@types/Components/Card';
 
 const constants = [
@@ -32,21 +31,29 @@ export default function Card({ task }: CardProps) {
           <Styles.ContainerCount key={index.toString()}>
             <Text fontFamily='Inter_700Bold' color={color}>{title}</Text>
             <Styles.Count>
-              <Text fontFamily='Inter_700Bold' color='gray_300'>{0}</Text>
+              <Text fontFamily='Inter_700Bold' color='gray_300'></Text>
             </Styles.Count>
           </Styles.ContainerCount>
         ))}
       </Styles.Header>
 
-      <Styles.Card>
-        <Styles.Check check={teste} />
-        <Styles.CheckButton onPress={() => setTeste(!teste)}>
-          <Text>{task.name}</Text>
-        </Styles.CheckButton>
-        <Styles.DeleteButton>
-          <MaterialCommunityIcons name="trash-can-outline" size={24} color="#fff" />
-        </Styles.DeleteButton>
-      </Styles.Card>
+      <Native.FlatList
+        data={task}
+        style={{ width: '100%' }}
+        keyExtractor={(_, i) => i.toString()}
+        ListEmptyComponent={<Empty />}
+        renderItem={({ item }) => (
+          <Styles.Card>
+            <Styles.Check check={teste} />
+            <Styles.CheckButton onPress={() => setTeste(!teste)}>
+              <Text>{item.name}</Text>
+            </Styles.CheckButton>
+            <Styles.DeleteButton>
+              <MaterialCommunityIcons name="trash-can-outline" size={24} color="#fff" />
+            </Styles.DeleteButton>
+          </Styles.Card>
+        )}
+      />
 
     </Styles.Container>
   );

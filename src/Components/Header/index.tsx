@@ -24,7 +24,6 @@ export default function Header({ tasks, setTasks }: HeaderProps) {
     }
 
     setTasks(oldValue => [...oldValue, newTask]);
-    setTaskName('');
   }
 
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, View } from 'react-native';
 import * as Styles from './styles';
 
 import Card from '../../Components/Card';
@@ -17,19 +17,10 @@ export default function Home(){
   function handleComplete(currentIndex: number){
   }
 
-  useEffect(() => {
-    console.warn(tasks)
-  }, [tasks]);
-
   return (
     <Styles.Container>
       <Header tasks={tasks} setTasks={setTasks} />
-      <FlatList
-        data={tasks}
-        renderItem={({ item }) => <Card task={item}  />}
-        keyExtractor={((_, index) => `index=${index}`)}
-        ListEmptyComponent={() => <Empty />}
-      />
+      <Card task={tasks} />
     </Styles.Container>
   );
 };

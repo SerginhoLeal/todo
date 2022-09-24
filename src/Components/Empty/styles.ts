@@ -7,7 +7,7 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: ${width * 0.20}px;
+  margin-top: ${width * 0.04}px;
 
   border-top-width: 1px;
   ${({ theme }) => css`
