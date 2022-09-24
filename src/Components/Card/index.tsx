@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as Native from 'react-native';
 import * as Styles from './styles';
 
@@ -54,6 +54,7 @@ const data = [
 ];
 
 export const Card: React.FC = () => {
+  const [teste, setTeste] = useState(false);
   return (
     <Styles.Container>
 
@@ -68,18 +69,23 @@ export const Card: React.FC = () => {
         ))}
       </Styles.Header>
 
-      {
-        data.length !== 0 ? data.map(({ text }, index) => (
-          <Styles.Card key={index.toString()}>
-            <Styles.Check />
-            <Styles.CheckButton>
-              <Text>{text}</Text>
+      <Native.FlatList
+        data={data}
+        style={{ width: '100%' }}
+        keyExtractor={(_, i) => i.toString()}
+        ListEmptyComponent={<Empty />}
+        renderItem={({ item }) => (
+          <Styles.Card>
+            <Styles.Check check={teste} />
+            <Styles.CheckButton onPress={() => setTeste(!teste)}>
+              <Text>{item.text}</Text>
             </Styles.CheckButton>
             <Styles.DeleteButton>
               <MaterialCommunityIcons name="trash-can-outline" size={24} color="#fff" />
             </Styles.DeleteButton>
           </Styles.Card>
-        )) : <Empty />}
+        )}
+      />
 
     </Styles.Container>
   );

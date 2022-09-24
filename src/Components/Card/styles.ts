@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components/native';
 
 export const Container = styled.View`
+  flex: 1;
   justify-content: center;
   align-items: center;
   padding: 0 24px;
@@ -51,8 +52,11 @@ export const Check = styled.View`
   height: 20px;
   border-radius: 50px;
   margin-right: 10px;
-  ${({ theme }) => css`
-    border:1px solid ${theme.colors.blue};
+  ${({ theme, check }: any) => css`
+    border: 1px solid ${theme.colors.blue};
+    ${check && css`
+      background-color: ${theme.colors.blue};
+    `}
   `};
 `;
 
