@@ -1,3 +1,7 @@
+import { Dimensions } from "react-native";
+
+const { width }= Dimensions.get('screen');
+
 export default {
   colors: {
     gray_100: '#F2F2F2',
@@ -19,7 +23,7 @@ export default {
     Inter_700Bold: 'Inter_700Bold'
   },
   font_size: {
-    small: 14,
+    small: width * 0.04,
     medium: 16,
   },
 }

@@ -30,7 +30,6 @@ export const Count = styled.View`
   ${({ theme }) => css`
     background-color: ${theme.colors.gray_400};
   `};
-
 `;
 
 export const Card = styled.View`

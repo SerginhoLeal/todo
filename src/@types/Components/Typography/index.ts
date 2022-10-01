@@ -7,4 +7,5 @@ export type TextProps = {
   theme: DefaultTheme;
   fontFamily?: fontFamily;
   color?: color;
+  done: boolean;
 };

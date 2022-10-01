@@ -1,29 +1,30 @@
-import { View, Text } from 'react-native'
-import * as Styles from "./styles";
+import { useContext, useState } from 'react';
 
-//@ts-ignore
+import * as Styles from "./styles";
 import Icon from "../../assets/Logo.png";
 
 import { AntDesign } from '@expo/vector-icons';
-import HeaderProps from '../../@types/Components/Header';
-import { useState } from 'react';
-import { Task } from '../../@types/Screens/Home';
+import { TasksContext } from '../../Contexts/Tasks';
+import { Keyboard } from 'react-native';
 
-export default function Header({ tasks, setTasks }: HeaderProps) {
+export default function Header() {
+  const { tasks, setTasks } = useContext(TasksContext);
   const [taskName, setTaskName] = useState<string>('');
 
-  function handlePress(){
-    if(taskName.trim() === ''){
+  function handlePress() {
+    if (taskName.trim() === '') {
       return alert('Por favor insira sua tarefa!')
     }
 
-    const newTask: Task = {
+    const newTask = {
       name: taskName,
       completed: false,
       key: Math.random() * 9
     }
 
     setTasks(oldValue => [...oldValue, newTask]);
+    setTaskName('');
+    Keyboard.dismiss();
   }
 
   return (
